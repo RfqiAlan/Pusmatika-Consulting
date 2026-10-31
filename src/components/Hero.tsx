@@ -2,7 +2,7 @@ export function Hero() {
   return (
     <section className="h-screen relative flex items-center justify-center overflow-hidden">
       <img
-        src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp"
+        src="/foto.jpeg"
         className="absolute inset-0 w-full h-full object-cover brightness-75 hero-img"
         alt="PUSMATIKA Background"
       />
