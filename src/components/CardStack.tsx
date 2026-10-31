@@ -11,60 +11,60 @@ const MODULES_LIST: ModuleCard[] = [
   {
     id: 'modul-1',
     number: '01',
-    title: 'FONDASI PEMODELAN',
-    subtitle: 'Matematika • Analisis Dinamik',
+    title: 'MODUL ANALISIS RIIL',
+    subtitle: 'Bidang Analisis • Teori Murni & Ukuran',
     description:
-      'Kalkulus multivariabel dan pemodelan sistem dinamik untuk merumuskan fenomena riil ke dalam sistem persamaan diferensial dengan analisis kestabilan ekuilibrium.',
+      'Modul komprehensif kajian analisis riil, ruang Banach & Hilbert, topologi metrik, serta teori ukuran dan integrasi Lebesgue untuk landasan riset teoritis.',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
   },
   {
     id: 'modul-2',
     number: '02',
-    title: 'MATEMATIKA DISKRIT',
-    subtitle: 'Matematika • Struktur Algoritmik',
+    title: 'MODUL STRUKTUR ALJABAR',
+    subtitle: 'Bidang Aljabar • Struktur & Kriptografi',
     description:
-      'Eksplorasi matematika diskrit fondasi ilmu komputer, teori graf lintasan optimal, kombinatorika lanjut, relasi rekurensi, dan logika pembuktian formal.',
+      'Pembelajaran abstraksi teori grup, ring, field, transformasi matriks linier terapan, serta implementasi algoritma kriptografi modern.',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/952269bf-60f5-48dc-afce-13953bead1eb_1600w.webp',
   },
   {
     id: 'modul-3',
     number: '03',
-    title: 'MATEMATIKA FINANSIAL',
-    subtitle: 'Aktuaria • Investasi & Bunga',
+    title: 'MODUL KOMBINATORIKA & GRAF',
+    subtitle: 'Bidang Kombinatorika • Struktur Diskrit & Lintasan',
     description:
-      'Pondasi aktuaris memahami nilai waktu uang (time value of money), perhitungan skedul amortisasi, durasi Macaulay, valuasi obligasi, dan imunisasi bunga.',
+      'Eksplorasi matematika diskrit terapan: teknik pencacahan enumeratif, relasi rekurensi, pewarnaan graf, dan perancangan algoritma pencarian rute terpendek.',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp',
   },
   {
     id: 'modul-4',
     number: '04',
-    title: 'KONTINJENSI HIDUP',
-    subtitle: 'Aktuaria • Risiko Asuransi',
+    title: 'MODUL PEMODELAN DINAMIK',
+    subtitle: 'Bidang Matematika Terapan • Simulasi Saintifik',
     description:
-      'Penerapan teori peluang dan matematika keuangan pada kontrak asuransi jiwa, tabel mortalita, perhitungan premi bersih, dan valuasi cadangan manfaat.',
+      'Merumuskan fenomena nyata biologi, fisika, dan dinamika industri ke dalam sistem persamaan diferensial dengan simulasi komputasi numerik Python/MATLAB.',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp',
   },
   {
     id: 'modul-5',
     number: '05',
-    title: 'ARSITEKTUR BASIS DATA',
-    subtitle: 'Sistem Informasi • Rekayasa Data',
+    title: 'MODUL ILMU AKTUARIA',
+    subtitle: 'Bidang Aktuaria • Risiko Finansial & Asuransi',
     description:
-      'Data modeling enterprise tingkat tinggi (ERD, Relational Schema), normalisasi database, REST API backend, dan optimasi query skala masif.',
+      'Kurikulum bimbingan persiapan sertifikasi aktuaris (PAI/SOA): evaluasi waktu nilai uang, model kontinjensi hidup, dan valuasi cadangan risiko premi asuransi.',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1c6b6980-54e4-4d8c-9ff6-e09b844d7b01_3840w.webp',
   },
   {
     id: 'modul-6',
     number: '06',
-    title: 'SAINS DATA & ALGORITMA',
-    subtitle: 'Sistem Informasi • Komputasi Cerdas',
+    title: 'MODUL BIG DATA & KOMPUTASI',
+    subtitle: 'Bidang Pemrograman & Big Data • Sains Data & Arsitektur',
     description:
-      'Integrasi matematika prediktif, evaluasi metrik model machine learning, visualisasi insight, dan deployment model prediktif ke sistem keputusan nyata.',
+      'Integrasi analisis matematika dengan teknologi komputasi modern: arsitektur basis data enterprise, machine learning terapan, dan pengolahan data skala besar.',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
   },
@@ -75,7 +75,7 @@ export function CardStack() {
     <section id="modul" className="stack-section">
       <div className="text-center mb-20 px-6">
         <div className="text-xs uppercase tracking-widest mb-4 opacity-50">
-          Kurikulum PUSMATIKA
+          Kurikulum 6 Bidang Keilmuan
         </div>
         <h2 className="display text-5xl md:text-7xl">MODUL PUSMATIKA</h2>
       </div>
@@ -101,7 +101,7 @@ export function CardStack() {
                   href="#kontak"
                   className="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors cursor-pointer inline-block"
                 >
-                  Konsultasi Modul
+                  Konsultasi Modul Ini →
                 </a>
               </div>
               <div className="card-img-wrap">

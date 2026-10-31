@@ -2,7 +2,8 @@ export interface ModuleItem {
   id: string
   number: string
   title: string
-  category: 'Matematika' | 'Aktuaria' | 'Sistem Informasi'
+  division: string
+  category: string
   tagline: string
   description: string
   topics: string[]
@@ -112,108 +113,114 @@ export const MODULES: ModuleItem[] = [
   {
     id: 'modul-1',
     number: '01',
-    category: 'Matematika',
-    title: 'Fondasi Analisis & Pemodelan Dinamik',
-    tagline: 'Kalkulus Multivariabel & Formulasi Fenomena Riil',
+    division: 'Bidang Analisis',
+    category: 'Matematika Murni',
+    title: 'Analisis Riil & Kalkulus Lanjut',
+    tagline: 'Topologi Metrik, Ruang Hilbert & Teori Ukuran',
     description:
-      'Membekali peserta kemampuan merumuskan fenomena fisik, biologis, dan ekonomi ke dalam persamaan diferensial dan sistem dinamik dengan analisis kestabilan titik ekuilibrium.',
+      'Mendalami fondasi analisis matematika murni, ruang metrik, kekonvergenan barisan fungsi, serta kalkulus diferensial dan integral tingkat tinggi untuk riset teoritis.',
     topics: [
-      'Kalkulus Multivariabel & Ruang Vektor',
-      'Persamaan Diferensial Biasa & Parsial',
-      'Metode Fase Plane & Analisis Kestabilan Lyapunov',
-      'Simulasi Numerik dengan Python/MATLAB',
+      'Real Analysis',
+      'Metric Spaces',
+      'Measure & Integration',
+      'Hilbert Spaces',
     ],
-    targetAudience: 'Mahasiswa Matematika, Fisika, Teknik, & Peneliti Pemodelan',
+    targetAudience: 'Mahasiswa Matematika, Peneliti Teori Murni, & Peminat Kalkulus Lanjutan',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
   },
   {
     id: 'modul-2',
     number: '02',
-    category: 'Matematika',
-    title: 'Matematika Diskrit & Struktur Algoritmik',
-    tagline: 'Kombinatorika, Teori Graf & Logika Pembuktian Formal',
+    division: 'Bidang Aljabar',
+    category: 'Struktur Aljabar',
+    title: 'Struktur Aljabar & Kriptografi',
+    tagline: 'Teori Grup, Ring, Ruang Vektor & Kriptografi Modern',
     description:
-      'Eksplorasi matematika diskrit yang menjadi fondasi ilmu komputer, keamanan informasi, struktur data, dan optimasi jaringan rute terpendek.',
+      'Mempelajari abstraksi aljabar modern, teori modul, struktur matriks dan transformasi linier terapan, serta implementasi algoritma kriptografi kunci publik.',
     topics: [
-      'Logika Matematika & Metode Pembuktian Formal',
-      'Teori Graf & Masalah Lintasan Optimal',
-      'Kombinatorika Lanjutan & Relasi Rekurensi',
-      'Kriptografi Dasar & Teori Bilangan Modular',
+      'Abstract Algebra',
+      'Group & Ring Theory',
+      'Linear Algebra',
+      'Cryptographic Algorithms',
     ],
-    targetAudience: 'Mahasiswa Informatika, Matematika, dan Peminat Algoritma Kompleks',
+    targetAudience: 'Mahasiswa Matematika, Keamanan Informasi, dan Pengembang Algoritma Kripto',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/952269bf-60f5-48dc-afce-13953bead1eb_1600w.webp',
   },
   {
     id: 'modul-3',
     number: '03',
-    category: 'Aktuaria',
-    title: 'Matematika Finansial & Dinamika Investasi',
-    tagline: 'Teori Bunga, Anuitas Majemuk & Portofolio Obligasi',
+    division: 'Bidang Kombinatorika',
+    category: 'Matematika Diskrit',
+    title: 'Kombinatorika & Teori Graf',
+    tagline: 'Struktur Diskrit, Pelabelan Graf & Optimasi Lintasan',
     description:
-      'Pondasi utama bagi calon aktuaris untuk memahami nilai waktu dari uang (time value of money), perhitungan skedul amortisasi, durasi Macaulay, dan imunisasi portofolio bunga.',
+      'Eksplorasi matematika diskrit terapan: teknik pencacahan enumeratif, relasi rekurensi, pewarnaan graf, dan perancangan algoritma pencarian rute terpendek.',
     topics: [
-      'Teori Tingkat Bunga & Diskonto Majemuk',
-      'Anuitas Pasti (Annuity-Immediate & Due)',
-      'Amortisasi Pinjaman & Dana Pelunasan (Sinking Funds)',
-      'Valuasi Obligasi & Manajemen Risiko Durasi / Konveksitas',
+      'Graph Theory',
+      'Discrete Optimization',
+      'Enumeration',
+      'Network Routing',
     ],
-    targetAudience: 'Kandidat Ujian Matematika Keuangan PAI, Mahasiswa Aktuaria & Finance',
+    targetAudience: 'Mahasiswa Informatika, Matematika, dan Peneliti Algoritma Jaringan',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp',
   },
   {
     id: 'modul-4',
     number: '04',
-    category: 'Aktuaria',
-    title: 'Kontinjensi Hidup & Pemodelan Risiko Asuransi',
-    tagline: 'Tabel Mortalita, Cadangan Premi & Teori Risiko Kolektif',
+    division: 'Bidang Matematika Terapan',
+    category: 'Matematika Terapan',
+    title: 'Pemodelan Dinamik & Simulasi Saintifik',
+    tagline: 'Persamaan Diferensial, Kestabilan & Metode Numerik',
     description:
-      'Modul spesialisasi aktuaria yang membahas penerapan teori peluang dan matematika keuangan pada kontrak perlindungan asuransi jiwa, anuitas seumur hidup, dan perhitungan premi bersih.',
+      'Merumuskan fenomena nyata biologi, fisika, dan dinamika industri ke dalam sistem persamaan diferensial dengan simulasi komputasi numerik Python/MATLAB.',
     topics: [
-      'Tabel Mortalita Standar & Fungsi Kelangsungan Hidup',
-      'Asuransi Jiwa Berjangka, Seumur Hidup & Endowment',
-      'Anuitas Jiwa & Perhitungan Premi Bersih (Net Premium)',
-      'Valuasi Cadangan Manfaat (Benefit Reserves) & Model Multi-Status',
+      'Dynamical Systems',
+      'Differential Equations',
+      'Numerical Methods',
+      'Lyapunov Stability',
     ],
-    targetAudience: 'Mahasiswa Aktuaria Tingkat Lanjut & Praktisi Industri Asuransi',
+    targetAudience: 'Mahasiswa Sains, Teknik, dan Praktisi Pemodelan Sistem Nyata',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp',
   },
   {
     id: 'modul-5',
     number: '05',
-    category: 'Sistem Informasi',
-    title: 'Arsitektur Basis Data Enterprise & Rekayasa Sistem',
-    tagline: 'Pemodelan Relasional, Normalisasi & Perancangan Solusi Digital',
+    division: 'Bidang Aktuaria',
+    category: 'Ilmu Aktuaria',
+    title: 'Matematika Aktuaria & Kontinjensi Hidup',
+    tagline: 'Matematika Finansial, Tabel Mortalita & Cadangan Premi',
     description:
-      'Penguasaan rekayasa sistem informasi dari level konseptual hingga implementasi database berkinerja tinggi yang mampu menangani skala data masif dan alur bisnis rumit.',
+      'Kurikulum bimbingan intensif persiapan ujian profesi aktuaris (PAI/SOA): evaluasi waktu nilai uang, model kontinjensi hidup, dan valuasi cadangan risiko asuransi.',
     topics: [
-      'Data Modeling Enterprise (Enhanced ERD, Relational Schema)',
-      'Normalisasi Basis Data Lanjut (1NF s/d BCNF, Denormalisasi Strategis)',
-      'Arsitektur REST API & Integrasi Layanan Backend',
-      'Keamanan Basis Data, Indexing & Optimasi Query SQL Komposit',
+      'Financial Mathematics',
+      'Life Contingencies',
+      'Mortality Tables',
+      'Benefit Reserves',
     ],
-    targetAudience: 'Mahasiswa Sistem Informasi, Database Engineer & Solution Architect',
+    targetAudience: 'Kandidat Ujian PAI / SOA, Mahasiswa Aktuaria & Praktisi Industri Asuransi',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1c6b6980-54e4-4d8c-9ff6-e09b844d7b01_3840w.webp',
   },
   {
     id: 'modul-6',
     number: '06',
-    category: 'Sistem Informasi',
-    title: 'Sains Data, Komputasi Cerdas & Algoritma Keputusan',
-    tagline: 'Integrasi Matematika, Statistika & Pembelajaran Mesin',
+    division: 'Bidang Pemrograman dan Big Data',
+    category: 'Sistem Informasi & Big Data',
+    title: 'Big Data & Sains Komputasi Cerdas',
+    tagline: 'Arsitektur Basis Data, Machine Learning & Algoritma Analitika',
     description:
-      'Jembatan antara teori matematika dan implementasi sistem informasi modern, mempelajari cara mengekstrak insight bisnis tersembunyi dengan algoritma prediktif mutakhir.',
+      'Integrasi matematika dan sains data modern: perancangan database enterprise berskala masif, rekayasa pipeline analitika, dan pelatihan model machine learning prediktif.',
     topics: [
-      'Pembersihan & Pra-pemrosesan Data Skala Besar',
-      'Regresi Linier Majemuk, Logistik & Model Klasifikasi',
-      'Algoritma Pengelompokan (Clustering) & Evaluasi Metrik Model',
-      'Deployment Model Prediktif ke Dashboard Interaktif',
+      'Big Data Engineering',
+      'Database Architecture',
+      'Applied Machine Learning',
+      'Data Pipelines',
     ],
-    targetAudience: 'Data Scientist, Business Analyst & Pengembang Sistem Cerdas',
+    targetAudience: 'Data Scientist, Solution Architect, & Pengembang Sistem Cerdas Enterprise',
     image:
       'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
   },
