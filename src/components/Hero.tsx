@@ -6,12 +6,15 @@ export function Hero() {
         className="absolute inset-0 w-full h-full object-cover brightness-75 hero-img"
         alt="PUSMATIKA Background"
       />
-      <div className="relative z-10 text-center text-white mix-blend-difference px-4 max-w-5xl mx-auto">
-        <h1 className="display text-[5.5vw] sm:text-[6.5vw] md:text-[7.5vw] leading-tight hero-text overflow-hidden uppercase">
-          <span className="block translate-y-full">Pusat Konsultasi</span>
+      <div className="relative z-10 text-center text-white mix-blend-difference px-4 w-full max-w-[96vw] mx-auto">
+        <h1 className="display text-[5vw] sm:text-[6vw] md:text-[6.8vw] leading-tight hero-text overflow-hidden uppercase tracking-tight">
+          <span className="block translate-y-full whitespace-nowrap">Pusat</span>
         </h1>
-        <h1 className="display text-[7vw] sm:text-[8.5vw] md:text-[9.5vw] leading-tight hero-text overflow-hidden uppercase">
-          <span className="block translate-y-full">Matematika</span>
+        <h1 className="display text-[5vw] sm:text-[6vw] md:text-[6.8vw] leading-tight hero-text overflow-hidden uppercase tracking-tight">
+          <span className="block translate-y-full whitespace-nowrap">Konsultasi</span>
+        </h1>
+        <h1 className="display text-[clamp(1.6rem,7vw,7rem)] leading-tight hero-text overflow-hidden uppercase tracking-tight mt-1 sm:mt-2">
+          <span className="block translate-y-full whitespace-nowrap">Matematika</span>
         </h1>
 
         <p className="mt-8 text-sm uppercase tracking-[0.5em] opacity-0 hero-fade">
