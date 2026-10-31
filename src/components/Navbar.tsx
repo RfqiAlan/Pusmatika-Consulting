@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react'
 
-interface NavbarProps {
-  onOpenBooking?: (initialModule?: string) => void
-}
-
-export function Navbar({ onOpenBooking }: NavbarProps) {
+export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -43,13 +39,12 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           <a href="#struktur" className="hover:text-gray-300 transition-colors">
             Struktur Organisasi
           </a>
-          <button
-            type="button"
-            onClick={() => onOpenBooking?.()}
-            className="px-5 py-2.5 rounded-full bg-white text-black text-[11px] font-bold tracking-wider hover:bg-neutral-200 transition-all cursor-pointer shadow-md"
+          <a
+            href="#kontak"
+            className="px-5 py-2.5 rounded-full bg-white text-black text-[11px] font-bold tracking-wider hover:bg-neutral-200 transition-all cursor-pointer shadow-md inline-block"
           >
-            Konsultasi Sekarang
-          </button>
+            Kontak Kami
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -95,16 +90,13 @@ export function Navbar({ onOpenBooking }: NavbarProps) {
           >
             Struktur Organisasi
           </a>
-          <button
-            type="button"
-            onClick={() => {
-              setIsOpen(false)
-              onOpenBooking?.()
-            }}
-            className="mt-4 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs tracking-widest cursor-pointer"
+          <a
+            href="#kontak"
+            onClick={() => setIsOpen(false)}
+            className="mt-4 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs tracking-widest cursor-pointer inline-block"
           >
-            Mulai Konsultasi
-          </button>
+            Kontak Kami
+          </a>
         </div>
       )}
     </>

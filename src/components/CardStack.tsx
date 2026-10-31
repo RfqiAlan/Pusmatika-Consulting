@@ -70,11 +70,7 @@ const MODULES_LIST: ModuleCard[] = [
   },
 ]
 
-interface CardStackProps {
-  onSelectModule?: (moduleTitle: string) => void
-}
-
-export function CardStack({ onSelectModule }: CardStackProps) {
+export function CardStack() {
   return (
     <section id="modul" className="stack-section">
       <div className="text-center mb-20 px-6">
@@ -101,13 +97,12 @@ export function CardStack({ onSelectModule }: CardStackProps) {
                 <div className="text-gray-400 font-light">
                   {modul.description}
                 </div>
-                <button
-                  type="button"
-                  onClick={() => onSelectModule?.(`Modul ${modul.number}: ${modul.title}`)}
-                  className="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors cursor-pointer"
+                <a
+                  href="#kontak"
+                  className="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors cursor-pointer inline-block"
                 >
                   Konsultasi Modul
-                </button>
+                </a>
               </div>
               <div className="card-img-wrap">
                 <img

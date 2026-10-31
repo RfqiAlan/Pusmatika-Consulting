@@ -1,21 +1,18 @@
-interface FooterProps {
-  onOpenBooking?: () => void
-}
-
-export function Footer({ onOpenBooking }: FooterProps) {
+export function Footer() {
   return (
     <footer id="kontak" className="footer-sticky">
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="text-xs uppercase tracking-[0.3em] mb-4 text-gray-400">
           Siap Memulai Sesi Bimbingan?
         </div>
-        <button
-          type="button"
-          onClick={() => onOpenBooking?.()}
-          className="display text-[6vw] leading-none hover:text-gray-300 transition-colors uppercase cursor-pointer"
+        <a
+          href="https://wa.me/6281234567890?text=Halo%20Admin%20PUSMATIKA%2C%20saya%20ingin%20berkonsultasi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="display text-[6vw] leading-none hover:text-gray-300 transition-colors uppercase cursor-pointer inline-block"
         >
           KONSULTASI SEKARANG
-        </button>
+        </a>
 
         <div className="flex flex-wrap justify-center gap-6 md:gap-10 mt-10 text-xs uppercase tracking-widest text-gray-400">
           <a href="#visi-misi" className="hover:text-white transition-colors">

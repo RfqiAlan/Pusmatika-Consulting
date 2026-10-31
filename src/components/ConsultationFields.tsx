@@ -1,10 +1,6 @@
 import { CONSULTATION_FIELDS } from '../data/pusmatikaData'
 
-interface ConsultationFieldsProps {
-  onSelectField?: (fieldId: string) => void
-}
-
-export function ConsultationFields({ onSelectField }: ConsultationFieldsProps) {
+export function ConsultationFields() {
   return (
     <section id="layanan" className="py-28 px-6 md:px-20 max-w-[1800px] mx-auto bg-[#e8e6e1] border-t border-b border-black/10">
       <div className="max-w-3xl mb-16">
@@ -76,13 +72,12 @@ export function ConsultationFields({ onSelectField }: ConsultationFieldsProps) {
               </div>
             </div>
 
-            <button
-              type="button"
-              onClick={() => onSelectField?.(field.id)}
-              className="mt-8 w-full py-3.5 px-4 rounded-xl bg-neutral-900 text-white font-semibold text-xs uppercase tracking-widest hover:bg-[var(--c-accent)] transition-all cursor-pointer text-center group-hover:shadow-md"
+            <a
+              href="#kontak"
+              className="mt-8 w-full py-3.5 px-4 rounded-xl bg-neutral-900 text-white font-semibold text-xs uppercase tracking-widest hover:bg-[var(--c-accent)] transition-all cursor-pointer text-center group-hover:shadow-md block"
             >
-              Pilih Konsultasi {field.title.replace('Konsultasi ', '')} →
-            </button>
+              Hubungi Konsultan →
+            </a>
           </div>
         ))}
       </div>

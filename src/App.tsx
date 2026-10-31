@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
@@ -13,21 +13,11 @@ import { CardStack } from './components/CardStack'
 import { OrganizationStructure } from './components/OrganizationStructure'
 import { Philosophy } from './components/Philosophy'
 import { Footer } from './components/Footer'
-import { ConsultationModal } from './components/ConsultationModal'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function App() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [isBookingOpen, setIsBookingOpen] = useState(false)
-  const [selectedModule, setSelectedModule] = useState<string | undefined>()
-  const [selectedField, setSelectedField] = useState<string | undefined>()
-
-  const handleOpenBooking = (initialModule?: string, initialField?: string) => {
-    setSelectedModule(initialModule)
-    setSelectedField(initialField)
-    setIsBookingOpen(true)
-  }
 
   useEffect(() => {
     // Lenis smooth scroll
@@ -171,33 +161,20 @@ export default function App() {
       <Preloader />
 
       {/* Navigation */}
-      <Navbar onOpenBooking={() => handleOpenBooking()} />
+      <Navbar />
 
       {/* Main Content Wrapper (Z-INDEX 10) */}
       <div className="wrapper">
         <Hero />
         <VisionMission />
-        <ConsultationFields
-          onSelectField={(fieldId) => handleOpenBooking(undefined, fieldId)}
-        />
-        <CardStack
-          onSelectModule={(moduleTitle) => handleOpenBooking(moduleTitle)}
-        />
+        <ConsultationFields />
+        <CardStack />
         <OrganizationStructure />
-        <Philosophy onOpenBooking={() => handleOpenBooking()} />
+        <Philosophy />
       </div>
 
       {/* Footer (Fixed Behind wrapper) */}
-      <Footer onOpenBooking={() => handleOpenBooking()} />
-
-      {/* Interactive Consultation Booking Modal */}
-      <ConsultationModal
-        key={`${selectedField || ''}-${selectedModule || ''}-${isBookingOpen}`}
-        isOpen={isBookingOpen}
-        onClose={() => setIsBookingOpen(false)}
-        initialModule={selectedModule}
-        initialField={selectedField}
-      />
+      <Footer />
     </div>
   )
 }
