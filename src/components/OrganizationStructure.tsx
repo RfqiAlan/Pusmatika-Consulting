@@ -54,7 +54,7 @@ export function OrganizationStructure() {
             STRUKTUR ORGANISASI
           </h2>
           <p className="text-gray-600 text-sm md:text-base mt-3 max-w-2xl font-light">
-            Sinergi kepemimpinan eksekutif dan 6 divisi keilmuan spesifik untuk menghasilkan layanan konsultasi presisi tinggi, modul riset, dan analisis komputasi.
+            Susunan Dewan Pembina, Badan Pengurus Harian, serta 6 Bidang Keilmuan PUSMATIKA.
           </p>
         </div>
 
@@ -92,29 +92,17 @@ export function OrganizationStructure() {
         <div className="space-y-10">
           {/* LEVEL 0: DOSEN PEMBINA */}
           <div className="flex flex-col items-center">
-            <div className="w-full max-w-2xl bg-gradient-to-br from-[#1c201d] to-[#111311] text-white p-7 sm:p-8 rounded-3xl shadow-lg border border-black/20 text-center relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--c-accent)] opacity-10 rounded-full blur-2xl pointer-events-none" />
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[10px] font-bold uppercase tracking-widest mb-3">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                {FACULTY_ADVISOR.badge}
-              </div>
-              <h3 className="display text-2xl sm:text-3xl font-bold tracking-tight text-white mb-1">
-                {FACULTY_ADVISOR.name}
-              </h3>
-              <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-3 font-semibold">
+            <div className="w-full max-w-lg bg-[#181a18] text-white p-6 sm:p-7 rounded-2xl shadow-md border border-black/20 text-center">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 block mb-1">
                 {FACULTY_ADVISOR.role}
               </span>
-              <p className="text-xs text-gray-300 font-light leading-relaxed max-w-lg mx-auto">
-                {FACULTY_ADVISOR.bio}
-              </p>
+              <h3 className="display text-xl sm:text-2xl font-bold tracking-tight text-white">
+                {FACULTY_ADVISOR.name}
+              </h3>
             </div>
 
             {/* Vertical Connector to BPH */}
             <div className="flex flex-col items-center my-3">
-              <div className="w-0.5 h-6 bg-black/20" />
-              <div className="px-3 py-1 rounded-full bg-black/5 text-gray-700 text-[9px] font-bold uppercase tracking-widest">
-                Supervisi &amp; Arahan
-              </div>
               <div className="w-0.5 h-6 bg-black/20" />
             </div>
           </div>
@@ -131,7 +119,7 @@ export function OrganizationStructure() {
                 </h3>
               </div>
               <span className="text-xs font-mono font-medium text-gray-500 bg-black/5 px-3 py-1 rounded-full">
-                4 Posisi Kunci
+                4 Posisi
               </span>
             </div>
 
@@ -139,53 +127,22 @@ export function OrganizationStructure() {
               {EXECUTIVE_BOARD.map((exec) => (
                 <div
                   key={exec.role}
-                  className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between ${
+                  className={`p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-center ${
                     exec.role === 'Ketua'
                       ? 'bg-[#181a18] text-white border-black/20 shadow-md'
                       : 'bg-white text-black border-black/10 hover:border-black/30 hover:shadow-sm'
                   }`}
                 >
-                  <div>
-                    <div className="flex justify-between items-start mb-4">
-                      <span
-                        className={`text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full ${
-                          exec.role === 'Ketua'
-                            ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30'
-                            : 'bg-black/5 text-gray-700'
-                        }`}
-                      >
-                        {exec.badge}
-                      </span>
-                      <span
-                        className={`text-xs font-mono font-bold ${
-                          exec.role === 'Ketua' ? 'text-gray-400' : 'text-gray-400'
-                        }`}
-                      >
-                        {exec.code}
-                      </span>
-                    </div>
-
-                    <span
-                      className={`text-xs uppercase tracking-wider font-semibold block mb-1 ${
-                        exec.role === 'Ketua' ? 'text-gray-300' : 'text-gray-500'
-                      }`}
-                    >
-                      {exec.role}
-                    </span>
-                    <h4 className="font-bold text-lg md:text-xl tracking-tight leading-snug">
-                      {exec.name}
-                    </h4>
-                  </div>
-
-                  <p
-                    className={`text-xs mt-4 pt-3 border-t font-light leading-relaxed ${
-                      exec.role === 'Ketua'
-                        ? 'border-white/10 text-gray-300'
-                        : 'border-black/5 text-gray-600'
+                  <span
+                    className={`text-xs uppercase tracking-wider font-semibold block mb-1 ${
+                      exec.role === 'Ketua' ? 'text-emerald-400' : 'text-gray-500'
                     }`}
                   >
-                    {exec.bio}
-                  </p>
+                    {exec.role}
+                  </span>
+                  <h4 className="font-bold text-lg md:text-xl tracking-tight leading-snug">
+                    {exec.name}
+                  </h4>
                 </div>
               ))}
             </div>
@@ -195,7 +152,7 @@ export function OrganizationStructure() {
           <div className="flex flex-col items-center justify-center my-4">
             <div className="w-0.5 h-8 bg-black/20" />
             <div className="px-4 py-1.5 rounded-full bg-black text-white text-[10px] font-bold uppercase tracking-widest shadow-sm">
-              Mengkoordinasikan 6 Bidang Keilmuan
+              6 Bidang Keilmuan
             </div>
             <div className="w-0.5 h-8 bg-black/20" />
           </div>
@@ -205,14 +162,14 @@ export function OrganizationStructure() {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[var(--c-accent)] block mb-1">
-                  Tier 2 — Spesialisasi &amp; Riset Terapan
+                  Tier 2 — Divisi Keilmuan
                 </span>
                 <h3 className="display text-2xl md:text-3xl font-bold tracking-tight">
                   6 Bidang Keilmuan PUSMATIKA
                 </h3>
               </div>
               <span className="text-xs font-mono text-gray-500 hidden sm:block">
-                Total 6 Divisi Riset
+                Total 6 Bidang
               </span>
             </div>
 
@@ -220,7 +177,7 @@ export function OrganizationStructure() {
               {SCIENCE_DIVISIONS.map((div) => (
                 <div
                   key={div.id}
-                  className="bg-white rounded-2xl border border-black/10 p-7 flex flex-col justify-between hover:shadow-lg hover:border-black/30 transition-all duration-300 group"
+                  className="bg-white rounded-2xl border border-black/10 p-6 flex flex-col justify-between hover:shadow-md hover:border-black/30 transition-all duration-300 group"
                 >
                   <div>
                     {/* Top Tag & Code */}
@@ -234,22 +191,19 @@ export function OrganizationStructure() {
                         </span>
                       </div>
                       <span className="text-[10px] uppercase tracking-widest font-bold px-2.5 py-1 rounded-full bg-black/5 text-gray-600">
-                        {div.members.length + 1} Peneliti
+                        {div.members.length + 1} Orang
                       </span>
                     </div>
 
                     {/* Department Title */}
-                    <h4 className="font-bold text-xl text-black mb-2 tracking-tight group-hover:text-[var(--c-accent)] transition-colors">
+                    <h4 className="font-bold text-xl text-black mb-4 tracking-tight group-hover:text-[var(--c-accent)] transition-colors">
                       {div.name}
                     </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed font-light mb-5">
-                      {div.description}
-                    </p>
 
                     {/* Ketua Bidang Box */}
                     <div className="p-3.5 bg-[#f5f3ef] rounded-xl border border-black/5 mb-4">
                       <span className="text-[10px] uppercase font-bold tracking-wider text-[var(--c-accent)] block mb-0.5">
-                        Ketua Bidang
+                        Ketua
                       </span>
                       <span className="font-bold text-sm text-black block">
                         {div.leader}
@@ -257,9 +211,9 @@ export function OrganizationStructure() {
                     </div>
 
                     {/* Anggota List */}
-                    <div className="mb-4">
+                    <div>
                       <span className="text-[10px] uppercase font-bold tracking-wider text-gray-500 block mb-2">
-                        Anggota Bidang ({div.members.length})
+                        Anggota ({div.members.length})
                       </span>
                       <ul className="space-y-1.5">
                         {div.members.map((member, idx) => (
@@ -272,20 +226,6 @@ export function OrganizationStructure() {
                           </li>
                         ))}
                       </ul>
-                    </div>
-                  </div>
-
-                  {/* Topics Footer */}
-                  <div className="pt-4 border-t border-black/10 mt-2">
-                    <div className="flex flex-wrap gap-1">
-                      {div.topics.map((t, i) => (
-                        <span
-                          key={i}
-                          className="text-[9px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded bg-black/5 text-gray-600"
-                        >
-                          {t}
-                        </span>
-                      ))}
                     </div>
                   </div>
                 </div>
