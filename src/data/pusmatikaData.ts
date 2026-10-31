@@ -272,7 +272,7 @@ export const SCIENCE_DIVISIONS: ScienceDivision[] = [
     members: ['Apriansyah', 'Erwin Suliano', 'Ariqah Rif’at Rafilah Sapsuha'],
     focus: 'Analisis Riil, Analisis Kompleks, Ruang Metrik & Teori Ukuran',
     description:
-      'Fokus pada eksplorasi matematika murni tingkat lanjut, pembuktian ketat struktur topologi dan ruang metrik, serta persamaan diferensial fungsional.',
+      'Mendalami fondasi matematika murni tingkat tinggi, meliputi analisis riil, ruang Banach & Hilbert, topologi, serta teori ukuran dan integrasi Lebesgue. Berperan penting dalam membedah permasalahan analitik teoritis dan formulasi kalkulus lanjutan.',
     icon: '∫',
     topics: ['Real Analysis', 'Measure Theory', 'Complex Functions', 'Metric Spaces'],
   },
@@ -285,7 +285,7 @@ export const SCIENCE_DIVISIONS: ScienceDivision[] = [
     members: ['Alia Maizahara', 'Irmayanti', 'Alriqza Muhammad', 'Shafiqa Nurcahyani'],
     focus: 'Aljabar Abstrak, Teori Grup & Ring, Aljabar Linier Terapan',
     description:
-      'Mengkaji struktur aljabar modern, teori modul, transformasi linier bernilai matriks, dan implementasi kriptografi teori bilangan.',
+      'Mengkaji struktur dan abstraksi matematika modern melalui teori grup, ring, field, ruang vektor, dan modul. Menjadi fondasi dalam aljabar linier komputasional, perancangan algoritma kriptografi, serta keamanan data modern.',
     icon: '⊗',
     topics: ['Abstract Algebra', 'Group & Ring Theory', 'Linear Algebra', 'Module Theory'],
   },
@@ -298,7 +298,7 @@ export const SCIENCE_DIVISIONS: ScienceDivision[] = [
     members: ['Alycia Chandra', 'Riskayanti Rahim', 'Kasmayanti'],
     focus: 'Teori Graf, Kombinatorika Terapan, Optimasi Diskrit',
     description:
-      'Mengembangkan riset di bidang struktur diskrit, pelabelan graf, pewarnaan peta, pencarian rute terpendek, dan formulasi enumerasi.',
+      'Meneliti struktur diskrit, teori graf, teknik pencacahan rekursif, pewarnaan graf, dan optimasi jaringan rute. Sangat krusial dalam perancangan algoritma efisien, jaringan telekomunikasi, dan pemodelan jalur terpendek.',
     icon: '∢',
     topics: ['Graph Theory', 'Discrete Mathematics', 'Network Routing', 'Enumeration'],
   },
@@ -317,7 +317,7 @@ export const SCIENCE_DIVISIONS: ScienceDivision[] = [
     ],
     focus: 'Pemodelan Dinamik, Persamaan Diferensial, Analisis Numerik',
     description:
-      'Menjembatani teori matematika dengan fenomena nyata industri, biologi komputasi, mekanika fluida, serta pemodelan epidemiologis.',
+      'Menjembatani konsep matematika dengan fenomena fisis dan dinamika dunia nyata melalui persamaan diferensial biasa/parsial, pemodelan sistem dinamik, simulasi numerik, dan analisis kestabilan bagi rekayasa industri.',
     icon: '∂',
     topics: ['Mathematical Modeling', 'Numerical Methods', 'Dynamical Systems', 'Scientific Simulation'],
   },
@@ -330,7 +330,7 @@ export const SCIENCE_DIVISIONS: ScienceDivision[] = [
     members: ['Mutashim Billah M.', 'Erwin Suliano', 'Chreis Klarisa Bandaso'],
     focus: 'Matematika Finansial, Kontinjensi Hidup, Valuasi Cadangan Premi',
     description:
-      'Pusat keilmuan aktuaria yang mendalami model probabilistik asuransi, tabel mortalita, simulasi risiko portofolio, dan bimbingan sertifikasi.',
+      'Mengembangkan pemodelan matematika risiko finansial, evaluasi tabel mortalita, perhitungan kontinjensi hidup, valuasi dana pensiun, serta pendampingan intensif persiapan ujian sertifikasi profesi aktuaris (PAI & SOA).',
     icon: 'ℜ',
     topics: ['Life Contingencies', 'Risk Theory', 'Financial Math', 'Pension Valuation'],
   },
@@ -343,7 +343,7 @@ export const SCIENCE_DIVISIONS: ScienceDivision[] = [
     members: ['I Buleleng Masrifatullah', 'Akhmad Hidayat'],
     focus: 'Sains Data, Rekayasa Algoritma, Machine Learning, Basis Data Enterprise',
     description:
-      'Mengintegrasikan teori matematika dan komputasi modern untuk pengolahan big data, rekayasa pipeline analitik, dan arsitektur sistem informasi.',
+      'Mengintegrasikan kekuatan analisis matematika dan statistika dengan teknologi komputasi modern. Berfokus pada arsitektur data enterprise, pemrosesan big data, algoritma machine learning terapan, dan transformasi digital analitis.',
     icon: '⌘',
     topics: ['Big Data Engineering', 'Machine Learning', 'Data Architecture', 'Applied Algorithms'],
   },

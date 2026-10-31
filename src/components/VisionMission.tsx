@@ -1,54 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { SCIENCE_DIVISIONS } from '../data/pusmatikaData'
 
 gsap.registerPlugin(ScrollTrigger)
-
-interface MissionItem {
-  no: string
-  title: string
-  desc: string
-  category: string
-}
-
-const MISSIONS: MissionItem[] = [
-  {
-    no: '01',
-    title: 'Konsultasi Presisi & Berkelanjutan',
-    desc: 'Menyelenggarakan bimbingan konsultasi berstandar tinggi di bidang matematika murni, matematika terapan, aktuaria, dan sistem informasi bagi akademisi dan profesional.',
-    category: 'Misi Strategis',
-  },
-  {
-    no: '02',
-    title: 'Kurikulum Modul Komprehensif',
-    desc: 'Mengembangkan dan menyajikan modul pembelajaran berbasis proyek nyata untuk mempercepat penguasaan pemodelan, risiko, dan data.',
-    category: 'Misi Strategis',
-  },
-  {
-    no: '03',
-    title: 'Akselerasi Karir & Profesi Aktuaria',
-    desc: 'Mendampingi persiapan sertifikasi aktuaris nasional (PAI) dan internasional (SOA) melalui simulasi kasus dan pemodelan kontinjensi hidup.',
-    category: 'Misi Strategis',
-  },
-  {
-    no: '04',
-    title: 'Integrasi Algoritma & Sistem Informasi',
-    desc: 'Menjembatani teori matematika tingkat tinggi dengan perancangan arsitektur basis data, enterprise systems, dan kecerdasan buatan terapan.',
-    category: 'Misi Strategis',
-  },
-  {
-    no: '05',
-    title: 'Riset Multidisiplin & Publikasi Ilmiah',
-    desc: 'Mendorong kolaborasi riset kuantitatif, pemodelan stokastik tingkat lanjut, serta penulisan karya ilmiah bereputasi nasional dan internasional.',
-    category: 'Misi Strategis',
-  },
-  {
-    no: '06',
-    title: 'Inkubasi Solusi Komputasi Industri',
-    desc: 'Menyediakan solusi konsultasi komputasi praktis, automasi pemodelan analitika, dan transformasi digital bagi kemitraan industri serta institusi.',
-    category: 'Misi Strategis',
-  },
-]
 
 function SplitWords({ text, className = '' }: { text: string; className?: string }) {
   return (
@@ -147,7 +102,7 @@ export function VisionMission() {
             <h2 className="display text-4xl md:text-5xl leading-tight split-animate">
               <span className="word-wrap"><span className="word-inner">Visi&nbsp;</span></span>
               <span className="word-wrap"><span className="word-inner">&amp;&nbsp;</span></span>
-              <span className="word-wrap"><span className="word-inner">Misi&nbsp;</span></span>
+              <span className="word-wrap"><span className="word-inner">Keilmuan&nbsp;</span></span>
               <br />
               <span className="text-[var(--c-accent)]">
                 <span className="word-wrap"><span className="word-inner">PUSMATIKA.</span></span>
@@ -168,7 +123,7 @@ export function VisionMission() {
             <div className="flex gap-10 text-xs uppercase tracking-widest split-animate text-gray-500 font-medium">
               <div>Fokus: Riset &amp; Industri</div>
               <div>Berdiri: 2024</div>
-              <div>6 Misi Strategis</div>
+              <div>6 Bidang Keilmuan</div>
             </div>
           </div>
         </div>
@@ -181,10 +136,10 @@ export function VisionMission() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4 border-t border-black/10 pt-8">
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-[var(--c-accent)] font-bold block mb-1">
-                Arah Strategis Organisasi
+                Divisi Keilmuan &amp; Riset Terapan
               </span>
               <h3 className="display text-2xl md:text-3xl font-bold">
-                6 MISI STRATEGIS PUSMATIKA
+                6 BIDANG KEILMUAN PUSMATIKA
               </h3>
             </div>
 
@@ -207,34 +162,69 @@ export function VisionMission() {
               className="flex gap-6 will-change-transform pb-4"
               style={{ width: 'max-content' }}
             >
-              {MISSIONS.map((m) => (
+              {SCIENCE_DIVISIONS.map((div) => (
                 <div
-                  key={m.no}
+                  key={div.id}
                   style={{
                     width: cardWidth > 0 ? `${cardWidth}px` : undefined,
                   }}
-                  className="shrink-0 p-8 md:p-10 bg-[#dad7d0] hover:bg-white transition-all duration-300 rounded-2xl border border-black/10 flex flex-col justify-between group shadow-sm hover:shadow-xl min-h-[380px] md:min-h-[400px]"
+                  className="shrink-0 p-8 md:p-10 bg-[#dad7d0] hover:bg-white transition-all duration-300 rounded-2xl border border-black/10 flex flex-col justify-between group shadow-sm hover:shadow-xl min-h-[440px] md:min-h-[460px]"
                 >
                   <div>
+                    {/* Number & Glyph Header */}
                     <div className="flex justify-between items-start mb-4">
-                      <span className="display text-4xl md:text-5xl font-bold opacity-30 group-hover:opacity-100 group-hover:text-[var(--c-accent)] transition-all">
-                        {m.no}
-                      </span>
+                      <div className="flex items-baseline gap-2">
+                        <span className="display text-4xl md:text-5xl font-bold opacity-30 group-hover:opacity-100 group-hover:text-[var(--c-accent)] transition-all">
+                          {div.code}
+                        </span>
+                        <span className="text-sm font-bold font-mono text-gray-500">
+                          {div.icon}
+                        </span>
+                      </div>
                       <span className="text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full bg-black/5 text-gray-700">
-                        Pilar {m.no}
+                        Pilar {div.code}
                       </span>
                     </div>
-                    <h4 className="font-bold text-xl md:text-2xl mt-4 mb-3 text-black tracking-tight leading-snug">
-                      {m.title}
+
+                    {/* Division Title */}
+                    <h4 className="font-bold text-xl md:text-2xl mt-3 mb-2 text-black tracking-tight leading-snug group-hover:text-[var(--c-accent)] transition-colors">
+                      {div.name}
                     </h4>
-                    <p className="text-sm text-gray-700 leading-relaxed font-light">
-                      {m.desc}
+
+                    {/* Ketua Bidang Box */}
+                    <div className="mb-3 px-3 py-1.5 rounded-lg bg-black/5 text-xs">
+                      <span className="font-semibold text-gray-600">Ketua Bidang: </span>
+                      <span className="font-bold text-black">{div.leader}</span>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs md:text-sm text-gray-700 leading-relaxed font-light mb-4">
+                      {div.description}
                     </p>
+
+                    {/* Members Pill List */}
+                    <div className="text-[11px] text-gray-600 mb-4">
+                      <span className="font-semibold block mb-1 text-[10px] uppercase tracking-wider text-gray-500">
+                        Anggota Peneliti ({div.members.length}):
+                      </span>
+                      <p className="font-medium text-gray-800 leading-normal">
+                        {div.members.join(', ')}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="mt-8 pt-4 border-t border-black/10 flex items-center justify-between text-xs font-semibold text-gray-700 uppercase tracking-widest group-hover:text-black">
-                    <span>{m.category}</span>
-                    <span className="text-base group-hover:translate-x-1 transition-transform">→</span>
+                  {/* Topics Footer */}
+                  <div className="mt-4 pt-4 border-t border-black/10 flex items-center justify-between text-xs font-semibold text-gray-700 group-hover:text-black">
+                    <span className="text-[10px] uppercase tracking-wider text-gray-500 truncate max-w-[80%]">
+                      {div.focus}
+                    </span>
+                    <a
+                      href="#struktur"
+                      className="text-base group-hover:translate-x-1 transition-transform inline-block"
+                      title="Lihat di Bagan Struktur Organisasi"
+                    >
+                      →
+                    </a>
                   </div>
                 </div>
               ))}
