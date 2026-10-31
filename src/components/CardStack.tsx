@@ -101,7 +101,7 @@ export function CardStack() {
               <div className="card-img-wrap">
                 <img
                   src={modul.image}
-                  className="card-img object-cover w-full h-auto"
+                  className="card-img object-cover w-full h-full"
                   alt={modul.title}
                 />
               </div>
