@@ -1,3 +1,5 @@
+import { scrollToBottom } from '../utils/scroll'
+
 export function Philosophy() {
   return (
     <section className="py-36 bg-[#E3E1DC] text-center flex flex-col items-center justify-center relative z-10 px-6">
@@ -11,12 +13,13 @@ export function Philosophy() {
         PUSMATIKA berakar pada komitmen bahwa logika matematika murni, ketelitian kalkulasi risiko aktuaria, dan keandalan rekayasa sistem informasi adalah pilar esensial untuk melahirkan keputusan strategis yang berdampak nyata.
       </div>
       <div className="flex flex-wrap justify-center gap-4">
-        <a
-          href="#kontak"
+        <button
+          type="button"
+          onClick={scrollToBottom}
           className="px-8 py-3.5 rounded-full bg-black text-white text-xs font-semibold uppercase tracking-widest hover:bg-neutral-800 transition-all cursor-pointer shadow-md inline-block"
         >
           Mulai Diskusi Konsultasi
-        </a>
+        </button>
       </div>
       <div className="h-16 w-px bg-black/20 mt-12" />
     </section>

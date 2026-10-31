@@ -1,4 +1,5 @@
 import { CONSULTATION_FIELDS } from '../data/pusmatikaData'
+import { scrollToBottom } from '../utils/scroll'
 
 export function ConsultationFields() {
   return (
@@ -72,12 +73,13 @@ export function ConsultationFields() {
               </div>
             </div>
 
-            <a
-              href="#kontak"
+            <button
+              type="button"
+              onClick={scrollToBottom}
               className="mt-8 w-full py-3.5 px-4 rounded-xl bg-neutral-900 text-white font-semibold text-xs uppercase tracking-widest hover:bg-[var(--c-accent)] transition-all cursor-pointer text-center group-hover:shadow-md block"
             >
               Hubungi Konsultan →
-            </a>
+            </button>
           </div>
         ))}
       </div>

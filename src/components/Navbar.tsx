@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { scrollToBottom } from '../utils/scroll'
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -39,12 +40,13 @@ export function Navbar() {
           <a href="#struktur" className="hover:text-gray-300 transition-colors">
             Struktur Organisasi
           </a>
-          <a
-            href="#kontak"
+          <button
+            type="button"
+            onClick={scrollToBottom}
             className="px-5 py-2.5 rounded-full bg-white text-black text-[11px] font-bold tracking-wider hover:bg-neutral-200 transition-all cursor-pointer shadow-md inline-block"
           >
             Kontak Kami
-          </a>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -90,13 +92,16 @@ export function Navbar() {
           >
             Struktur Organisasi
           </a>
-          <a
-            href="#kontak"
-            onClick={() => setIsOpen(false)}
+          <button
+            type="button"
+            onClick={(e) => {
+              setIsOpen(false)
+              scrollToBottom(e)
+            }}
             className="mt-4 px-6 py-3 rounded-full bg-white text-black font-semibold text-xs tracking-widest cursor-pointer inline-block"
           >
             Kontak Kami
-          </a>
+          </button>
         </div>
       )}
     </>

@@ -1,3 +1,5 @@
+import { scrollToBottom } from '../utils/scroll'
+
 interface ModuleCard {
   id: string
   number: string
@@ -91,12 +93,13 @@ export function CardStack() {
                 <div className="text-gray-400 font-light">
                   {modul.description}
                 </div>
-                <a
-                  href="#kontak"
+                <button
+                  type="button"
+                  onClick={scrollToBottom}
                   className="text-left uppercase tracking-widest text-xs border-b border-white/30 pb-2 w-max hover:text-white transition-colors cursor-pointer inline-block"
                 >
                   Konsultasi Modul Ini →
-                </a>
+                </button>
               </div>
               <div className="card-img-wrap">
                 <img

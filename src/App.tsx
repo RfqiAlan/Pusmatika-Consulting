@@ -27,6 +27,7 @@ export default function App() {
       orientation: 'vertical',
       smoothWheel: true,
     })
+    ;(window as unknown as { __lenis?: Lenis }).__lenis = lenis
 
     const updateScrollTrigger = () => {
       ScrollTrigger.update()
@@ -146,6 +147,7 @@ export default function App() {
       ctx.revert()
       gsap.ticker.remove(tickerCallback)
       lenis.destroy()
+      delete (window as unknown as { __lenis?: Lenis }).__lenis
     }
   }, [])
 
