@@ -21,12 +21,32 @@ export interface ConsultationField {
   popularTopics: string[]
 }
 
-export interface OrgMember {
-  name: string
+export interface ExecutiveLeader {
   role: string
-  division: string
+  name: string
+  code: string
+  badge: string
   bio: string
-  expertise: string[]
+}
+
+export interface ScienceDivision {
+  id: string
+  code: string
+  name: string
+  shortName: string
+  leader: string
+  members: string[]
+  focus: string
+  description: string
+  icon: string
+  topics: string[]
+}
+
+export interface MemberProfile {
+  name: string
+  roles: string[]
+  divisions: string[]
+  isLeader?: boolean
 }
 
 export const CONSULTATION_FIELDS: ConsultationField[] = [
@@ -191,48 +211,169 @@ export const MODULES: ModuleItem[] = [
   },
 ]
 
-export const ORG_MEMBERS: OrgMember[] = [
+// ==========================================
+// STRUKTUR ORGANISASI RESMI PUSMATIKA
+// ==========================================
+
+export const EXECUTIVE_BOARD: ExecutiveLeader[] = [
   {
-    name: 'Prof. Dr. Ir. H. Sudirman, M.Sc.',
-    role: 'Dewan Pengarah & Pembina Utama',
-    division: 'Dewan Pengarah PUSMATIKA',
-    bio: 'Guru besar matematika terapan dengan pengalaman lebih dari 25 tahun dalam riset sistem stokastik dan pemodelan kuantitatif.',
-    expertise: ['Matematika Terapan', 'Stochastic Systems', 'Analisis Numerik'],
+    role: 'Ketua',
+    name: 'Normand Tengga',
+    code: 'BPH-01',
+    badge: 'Pimpinan Utama',
+    bio: 'Memimpin visi strategis, tata kelola, dan koordinasi umum seluruh divisi keilmuan serta kemitraan eksternal PUSMATIKA.',
   },
   {
-    name: 'Dr. Ahmad Fauzi, S.Si., M.Mat., FSAI',
-    role: 'Direktur Eksekutif / Ketua PUSMATIKA',
-    division: 'Pimpinan Eksekutif',
-    bio: 'Pakar riset aktuaria dan matematika murni, bersertifikasi FSAI dengan rekam jejak bimbingan ujian profesi dan pemodelan risiko terkemuka.',
-    expertise: ['Aktuaria Finansial', 'Aljabar Linier Terapan', 'Risk Governance'],
+    role: 'Wakil Ketua',
+    name: 'Alriqza Muhammad',
+    code: 'BPH-02',
+    badge: 'Pimpinan Eksekutif',
+    bio: 'Mendampingi kepemimpinan umum, mengawasi operasional harian, dan akselerasi riset program kerja lintas bidang.',
   },
   {
-    name: 'Nadia Larasati, S.Kom., M.T.I.',
-    role: 'Wakil Direktur Bidang Sistem Informasi',
-    division: 'Pimpinan Eksekutif',
-    bio: 'Spesialis perancangan arsitektur sistem informasi enterprise dan data governance dengan pengalaman riset industri teknologi tinggi.',
-    expertise: ['Database Architecture', 'Enterprise Systems', 'Data Pipelines'],
+    role: 'Sekretaris',
+    name: 'Shafiqa Nurcahyani',
+    code: 'BPH-03',
+    badge: 'Administrasi & Regulasi',
+    bio: 'Mengelola tata kelola administrasi organisasi, korespondensi resmi, dokumentasi kurikulum modul, dan penjadwalan konsultasi.',
   },
   {
-    name: 'Rian Pratama, S.Si., M.Sc.',
-    role: 'Kepala Divisi Konsultasi Matematika',
-    division: 'Divisi Konsultasi Matematika',
-    bio: 'Fokus pada bimbingan pemodelan matematika dinamis, optimasi nonlinear, dan bimbingan tugas akhir matematika murni & terapan.',
-    expertise: ['Pemodelan Matematika', 'Kalkulus Multivariabel', 'Optimasi'],
-  },
-  {
-    name: 'Zahra Annisa, S.Si., ASAI, M.Akt.',
-    role: 'Kepala Divisi Konsultasi Aktuaria',
-    division: 'Divisi Konsultasi Aktuaria',
-    bio: 'Aktuaris praktisi dengan keahlian valuasi dana pensiun, pemodelan tabel mortalitas, dan kurikulum ujian profesi PAI.',
-    expertise: ['Kontinjensi Hidup', 'Valuasi Pensiun', 'Cadangan Premi'],
-  },
-  {
-    name: 'Bintang Wicaksana, S.Kom., M.Cs.',
-    role: 'Kepala Divisi Kurikulum, Modul & Komputasi',
-    division: 'Divisi Kurikulum & Modul',
-    bio: 'Bertanggung jawab atas standarisasi kualitas materi modul, materi praktikum digital, serta pengembangan lab simulasi komputasi.',
-    expertise: ['Applied Machine Learning', 'Kurikulum Modul', 'Scientific Computing'],
+    role: 'Bendahara',
+    name: 'Ariqah Rif’at Rafilah Sapsuha',
+    code: 'BPH-04',
+    badge: 'Keuangan & Anggaran',
+    bio: 'Bertanggung jawab atas pengelolaan keuangan, akuntabilitas anggaran operasional modul, dan perbendaharaan organisasi.',
   },
 ]
 
+export const SCIENCE_DIVISIONS: ScienceDivision[] = [
+  {
+    id: 'analisis',
+    code: '01',
+    name: 'Bidang Analisis',
+    shortName: 'Analisis',
+    leader: 'Muh. Iqra Al Huda Awe',
+    members: ['Apriansyah', 'Erwin Suliano', 'Ariqah Rif’at Rafilah Sapsuha'],
+    focus: 'Analisis Riil, Analisis Kompleks, Ruang Metrik & Teori Ukuran',
+    description:
+      'Fokus pada eksplorasi matematika murni tingkat lanjut, pembuktian ketat struktur topologi dan ruang metrik, serta persamaan diferensial fungsional.',
+    icon: '∫',
+    topics: ['Real Analysis', 'Measure Theory', 'Complex Functions', 'Metric Spaces'],
+  },
+  {
+    id: 'aljabar',
+    code: '02',
+    name: 'Bidang Aljabar',
+    shortName: 'Aljabar',
+    leader: 'Muhammad Risky Abigael Akbar',
+    members: ['Alia Maizahara', 'Irmayanti', 'Alriqza Muhammad', 'Shafiqa Nurcahyani'],
+    focus: 'Aljabar Abstrak, Teori Grup & Ring, Aljabar Linier Terapan',
+    description:
+      'Mengkaji struktur aljabar modern, teori modul, transformasi linier bernilai matriks, dan implementasi kriptografi teori bilangan.',
+    icon: '⊗',
+    topics: ['Abstract Algebra', 'Group & Ring Theory', 'Linear Algebra', 'Module Theory'],
+  },
+  {
+    id: 'kombinatorika',
+    code: '03',
+    name: 'Bidang Kombinatorika',
+    shortName: 'Kombinatorika',
+    leader: 'Andi Radian Sirat',
+    members: ['Alycia Chandra', 'Riskayanti Rahim', 'Kasmayanti'],
+    focus: 'Teori Graf, Kombinatorika Terapan, Optimasi Diskrit',
+    description:
+      'Mengembangkan riset di bidang struktur diskrit, pelabelan graf, pewarnaan peta, pencarian rute terpendek, dan formulasi enumerasi.',
+    icon: '∢',
+    topics: ['Graph Theory', 'Discrete Mathematics', 'Network Routing', 'Enumeration'],
+  },
+  {
+    id: 'matematika-terapan',
+    code: '04',
+    name: 'Bidang Matematika Terapan',
+    shortName: 'Matematika Terapan',
+    leader: 'Muh Taslim',
+    members: [
+      'Nur Annisa Haruna',
+      'Akhrima Haira',
+      'Sitti Nadira',
+      'Nazarriesta Dhuhasa Tri Wahyudi',
+      'Normand Tengga',
+    ],
+    focus: 'Pemodelan Dinamik, Persamaan Diferensial, Analisis Numerik',
+    description:
+      'Menjembatani teori matematika dengan fenomena nyata industri, biologi komputasi, mekanika fluida, serta pemodelan epidemiologis.',
+    icon: '∂',
+    topics: ['Mathematical Modeling', 'Numerical Methods', 'Dynamical Systems', 'Scientific Simulation'],
+  },
+  {
+    id: 'aktuaria',
+    code: '05',
+    name: 'Bidang Aktuaria',
+    shortName: 'Aktuaria',
+    leader: 'Muh Rafi Al Mubarak',
+    members: ['Mutashim Billah M.', 'Erwin Suliano', 'Chreis Klarisa Bandaso'],
+    focus: 'Matematika Finansial, Kontinjensi Hidup, Valuasi Cadangan Premi',
+    description:
+      'Pusat keilmuan aktuaria yang mendalami model probabilistik asuransi, tabel mortalita, simulasi risiko portofolio, dan bimbingan sertifikasi.',
+    icon: 'ℜ',
+    topics: ['Life Contingencies', 'Risk Theory', 'Financial Math', 'Pension Valuation'],
+  },
+  {
+    id: 'pemrograman-big-data',
+    code: '06',
+    name: 'Bidang Pemrograman dan Big Data',
+    shortName: 'Pemrograman & Big Data',
+    leader: 'Rifqi Alan Maulana',
+    members: ['I Buleleng Masrifatullah', 'Akhmad Hidayat'],
+    focus: 'Sains Data, Rekayasa Algoritma, Machine Learning, Basis Data Enterprise',
+    description:
+      'Mengintegrasikan teori matematika dan komputasi modern untuk pengolahan big data, rekayasa pipeline analitik, dan arsitektur sistem informasi.',
+    icon: '⌘',
+    topics: ['Big Data Engineering', 'Machine Learning', 'Data Architecture', 'Applied Algorithms'],
+  },
+]
+
+// Ekstrak profil individu unik untuk tab Direktori Anggota
+export function getAllMemberProfiles(): MemberProfile[] {
+  const memberMap = new Map<string, { roles: Set<string>; divisions: Set<string>; isLeader: boolean }>()
+
+  // 1. Masukkan pimpinan BPH
+  for (const exec of EXECUTIVE_BOARD) {
+    if (!memberMap.has(exec.name)) {
+      memberMap.set(exec.name, { roles: new Set(), divisions: new Set(), isLeader: true })
+    }
+    const rec = memberMap.get(exec.name)!
+    rec.roles.add(exec.role)
+    rec.divisions.add('Badan Pengurus Harian (BPH)')
+    rec.isLeader = true
+  }
+
+  // 2. Masukkan ketua dan anggota bidang
+  for (const div of SCIENCE_DIVISIONS) {
+    // Leader
+    if (!memberMap.has(div.leader)) {
+      memberMap.set(div.leader, { roles: new Set(), divisions: new Set(), isLeader: true })
+    }
+    const leaderRec = memberMap.get(div.leader)!
+    leaderRec.roles.add(`Ketua ${div.name}`)
+    leaderRec.divisions.add(div.name)
+    leaderRec.isLeader = true
+
+    // Members
+    for (const member of div.members) {
+      if (!memberMap.has(member)) {
+        memberMap.set(member, { roles: new Set(), divisions: new Set(), isLeader: false })
+      }
+      const memberRec = memberMap.get(member)!
+      memberRec.roles.add(`Anggota ${div.name}`)
+      memberRec.divisions.add(div.name)
+    }
+  }
+
+  return Array.from(memberMap.entries()).map(([name, data]) => ({
+    name,
+    roles: Array.from(data.roles),
+    divisions: Array.from(data.divisions),
+    isLeader: data.isLeader,
+  }))
+}
