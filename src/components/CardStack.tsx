@@ -15,8 +15,7 @@ const MODULES_LIST: ModuleCard[] = [
     subtitle: 'Bidang Analisis • Teori Murni & Ukuran',
     description:
       'Modul komprehensif kajian analisis riil, ruang Banach & Hilbert, topologi metrik, serta teori ukuran dan integrasi Lebesgue untuk landasan riset teoritis.',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
+    image: '/modules/modul-1.svg',
   },
   {
     id: 'modul-2',
@@ -25,8 +24,7 @@ const MODULES_LIST: ModuleCard[] = [
     subtitle: 'Bidang Aljabar • Struktur & Kriptografi',
     description:
       'Pembelajaran abstraksi teori grup, ring, field, transformasi matriks linier terapan, serta implementasi algoritma kriptografi modern.',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/952269bf-60f5-48dc-afce-13953bead1eb_1600w.webp',
+    image: '/modules/modul-2.svg',
   },
   {
     id: 'modul-3',
@@ -35,8 +33,7 @@ const MODULES_LIST: ModuleCard[] = [
     subtitle: 'Bidang Kombinatorika • Struktur Diskrit & Lintasan',
     description:
       'Eksplorasi matematika diskrit terapan: teknik pencacahan enumeratif, relasi rekurensi, pewarnaan graf, dan perancangan algoritma pencarian rute terpendek.',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp',
+    image: '/modules/modul-3.svg',
   },
   {
     id: 'modul-4',
@@ -45,8 +42,7 @@ const MODULES_LIST: ModuleCard[] = [
     subtitle: 'Bidang Matematika Terapan • Simulasi Saintifik',
     description:
       'Merumuskan fenomena nyata biologi, fisika, dan dinamika industri ke dalam sistem persamaan diferensial dengan simulasi komputasi numerik Python/MATLAB.',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp',
+    image: '/modules/modul-4.svg',
   },
   {
     id: 'modul-5',
@@ -55,8 +51,7 @@ const MODULES_LIST: ModuleCard[] = [
     subtitle: 'Bidang Aktuaria • Risiko Finansial & Asuransi',
     description:
       'Kurikulum bimbingan persiapan sertifikasi aktuaris (PAI/SOA): evaluasi waktu nilai uang, model kontinjensi hidup, dan valuasi cadangan risiko premi asuransi.',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1c6b6980-54e4-4d8c-9ff6-e09b844d7b01_3840w.webp',
+    image: '/modules/modul-5.svg',
   },
   {
     id: 'modul-6',
@@ -65,8 +60,7 @@ const MODULES_LIST: ModuleCard[] = [
     subtitle: 'Bidang Pemrograman & Big Data • Sains Data & Arsitektur',
     description:
       'Integrasi analisis matematika dengan teknologi komputasi modern: arsitektur basis data enterprise, machine learning terapan, dan pengolahan data skala besar.',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
+    image: '/modules/modul-6.svg',
   },
 ]
 

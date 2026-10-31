@@ -126,8 +126,7 @@ export const MODULES: ModuleItem[] = [
       'Hilbert Spaces',
     ],
     targetAudience: 'Mahasiswa Matematika, Peneliti Teori Murni, & Peminat Kalkulus Lanjutan',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
+    image: '/modules/modul-1.svg',
   },
   {
     id: 'modul-2',
@@ -145,8 +144,7 @@ export const MODULES: ModuleItem[] = [
       'Cryptographic Algorithms',
     ],
     targetAudience: 'Mahasiswa Matematika, Keamanan Informasi, dan Pengembang Algoritma Kripto',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/952269bf-60f5-48dc-afce-13953bead1eb_1600w.webp',
+    image: '/modules/modul-2.svg',
   },
   {
     id: 'modul-3',
@@ -164,8 +162,7 @@ export const MODULES: ModuleItem[] = [
       'Network Routing',
     ],
     targetAudience: 'Mahasiswa Informatika, Matematika, dan Peneliti Algoritma Jaringan',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/aa5ed4de-1a7e-4bb7-b0ea-1a4c511663df_1600w.webp',
+    image: '/modules/modul-3.svg',
   },
   {
     id: 'modul-4',
@@ -183,8 +180,7 @@ export const MODULES: ModuleItem[] = [
       'Lyapunov Stability',
     ],
     targetAudience: 'Mahasiswa Sains, Teknik, dan Praktisi Pemodelan Sistem Nyata',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/482e7b6a-168c-4d0d-b35d-0e2ff4014577_3840w.webp',
+    image: '/modules/modul-4.svg',
   },
   {
     id: 'modul-5',
@@ -202,8 +198,7 @@ export const MODULES: ModuleItem[] = [
       'Benefit Reserves',
     ],
     targetAudience: 'Kandidat Ujian PAI / SOA, Mahasiswa Aktuaria & Praktisi Industri Asuransi',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/1c6b6980-54e4-4d8c-9ff6-e09b844d7b01_3840w.webp',
+    image: '/modules/modul-5.svg',
   },
   {
     id: 'modul-6',
@@ -221,8 +216,7 @@ export const MODULES: ModuleItem[] = [
       'Data Pipelines',
     ],
     targetAudience: 'Data Scientist, Solution Architect, & Pengembang Sistem Cerdas Enterprise',
-    image:
-      'https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dccab47-16b0-4716-9e1a-b97f124e3031_1600w.webp',
+    image: '/modules/modul-6.svg',
   },
 ]
 
