@@ -21,6 +21,14 @@ export interface ConsultationField {
   popularTopics: string[]
 }
 
+export interface FacultyAdvisor {
+  role: string
+  name: string
+  titleLabel: string
+  badge: string
+  bio: string
+}
+
 export interface ExecutiveLeader {
   role: string
   name: string
@@ -215,6 +223,14 @@ export const MODULES: ModuleItem[] = [
 // STRUKTUR ORGANISASI RESMI PUSMATIKA
 // ==========================================
 
+export const FACULTY_ADVISOR: FacultyAdvisor = {
+  role: 'Dosen Pembina',
+  name: 'Dr. Andi Muhammad Anwar, S.Si, M.Si',
+  titleLabel: 'Pembina & Pengarah Akademik',
+  badge: 'Dosen Pembina',
+  bio: 'Memberikan supervisi akademik, bimbingan strategis kurikulum modul keilmuan, dan arahan riset analitika bagi seluruh divisi PUSMATIKA.',
+}
+
 export const EXECUTIVE_BOARD: ExecutiveLeader[] = [
   {
     role: 'Ketua',
@@ -336,6 +352,13 @@ export const SCIENCE_DIVISIONS: ScienceDivision[] = [
 // Ekstrak profil individu unik untuk tab Direktori Anggota
 export function getAllMemberProfiles(): MemberProfile[] {
   const memberMap = new Map<string, { roles: Set<string>; divisions: Set<string>; isLeader: boolean }>()
+
+  // 0. Masukkan Dosen Pembina
+  memberMap.set(FACULTY_ADVISOR.name, {
+    roles: new Set([FACULTY_ADVISOR.role]),
+    divisions: new Set(['Dosen Pembina & Pengarah Akademik']),
+    isLeader: true,
+  })
 
   // 1. Masukkan pimpinan BPH
   for (const exec of EXECUTIVE_BOARD) {

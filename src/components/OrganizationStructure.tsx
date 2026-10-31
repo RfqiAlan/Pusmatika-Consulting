@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import {
+  FACULTY_ADVISOR,
   EXECUTIVE_BOARD,
   SCIENCE_DIVISIONS,
   getAllMemberProfiles,
@@ -23,6 +24,12 @@ export function OrganizationStructure() {
       if (!matchSearch) return false
 
       if (selectedFilter === 'all') return true
+      if (selectedFilter === 'pembina') {
+        return (
+          m.roles.some((r) => r.toLowerCase().includes('pembina')) ||
+          m.divisions.some((d) => d.toLowerCase().includes('pembina'))
+        )
+      }
       if (selectedFilter === 'bph') {
         return m.divisions.some((d) => d.includes('BPH'))
       }
@@ -82,7 +89,36 @@ export function OrganizationStructure() {
           TAB 1: BAGAN STRUKTUR (HIERARCHY VIEW)
       ======================================================== */}
       {activeTab === 'chart' && (
-        <div className="space-y-12">
+        <div className="space-y-10">
+          {/* LEVEL 0: DOSEN PEMBINA */}
+          <div className="flex flex-col items-center">
+            <div className="w-full max-w-2xl bg-gradient-to-br from-[#1c201d] to-[#111311] text-white p-7 sm:p-8 rounded-3xl shadow-lg border border-black/20 text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--c-accent)] opacity-10 rounded-full blur-2xl pointer-events-none" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[10px] font-bold uppercase tracking-widest mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                {FACULTY_ADVISOR.badge}
+              </div>
+              <h3 className="display text-2xl sm:text-3xl font-bold tracking-tight text-white mb-1">
+                {FACULTY_ADVISOR.name}
+              </h3>
+              <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 block mb-3 font-semibold">
+                {FACULTY_ADVISOR.role}
+              </span>
+              <p className="text-xs text-gray-300 font-light leading-relaxed max-w-lg mx-auto">
+                {FACULTY_ADVISOR.bio}
+              </p>
+            </div>
+
+            {/* Vertical Connector to BPH */}
+            <div className="flex flex-col items-center my-3">
+              <div className="w-0.5 h-6 bg-black/20" />
+              <div className="px-3 py-1 rounded-full bg-black/5 text-gray-700 text-[9px] font-bold uppercase tracking-widest">
+                Supervisi &amp; Arahan
+              </div>
+              <div className="w-0.5 h-6 bg-black/20" />
+            </div>
+          </div>
+
           {/* LEVEL 1: BADAN PENGURUS HARIAN (BPH) */}
           <div className="bg-white/80 border border-black/10 rounded-3xl p-6 sm:p-10 shadow-sm">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 mb-8 border-b border-black/10 gap-2">
@@ -290,6 +326,7 @@ export function OrganizationStructure() {
             <div className="flex flex-wrap gap-1.5 text-xs">
               {[
                 { id: 'all', label: 'Semua' },
+                { id: 'pembina', label: 'Dosen Pembina' },
                 { id: 'bph', label: 'BPH' },
                 { id: 'analisis', label: 'Analisis' },
                 { id: 'aljabar', label: 'Aljabar' },
@@ -349,7 +386,9 @@ export function OrganizationStructure() {
                             <span
                               key={rIdx}
                               className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                                role.startsWith('Ketua') || role.startsWith('Wakil')
+                                role === 'Dosen Pembina'
+                                  ? 'bg-[#181a18] text-emerald-300 border border-emerald-500/30'
+                                  : role.startsWith('Ketua') || role.startsWith('Wakil')
                                   ? 'bg-[var(--c-accent)] text-white'
                                   : 'bg-black/5 text-gray-700'
                               }`}
